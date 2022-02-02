@@ -10,8 +10,8 @@ def sign(m):
 
 	# r, s = ecdsa.sign(m, sk, hashfunc=sha_256)
 	r, s = ecdsa.sign(m, sk, hashfunc=sha256)
-	r = 0
-	s = 0
+	# r = 0
+	# s = 0
 
 	assert isinstance( public_key, point.Point )
 	assert isinstance( r, int )
