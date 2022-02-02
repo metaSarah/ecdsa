@@ -9,7 +9,7 @@ def sign(m):
 	public_key = pk
 
 	# r, s = ecdsa.sign(m, sk, hashfunc=sha_256)
-	r, s = ecdsa.sign(m, sk, hashfunc=ecdsa.sha_256)
+	r, s = ecdsa.sign(m, sk, hashfunc=sha256)
 	r = 0
 	s = 0
 
