@@ -8,8 +8,8 @@ def sign(m):
 	
 	#generate public key
 	#Your code here
-  	pk = keys.gen_keypair(curve.secp256k1)
-	public_key = pk[1]
+  	sk, pk = keys.gen_keypair(curve.secp256k1)
+	public_key = pk
 
   	r, s = fastecdsa.ecdsa.sign(m,sk,curve.secp256k1,openssl_sha256,False)
 	r = 0
