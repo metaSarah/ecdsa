@@ -5,8 +5,8 @@ from fastecdsa import curve, ecdsa, keys, point
 from hashlib import sha256
 
 def sign(m):
-	pk = keys.gen_keypair(curve.secp256k1)
-	public_key = pk[1]
+	sk, pk = keys.gen_keypair(curve.secp256k1)
+	public_key = pk
 	
 	r, s = ecdsa.sign(m,sk,curve.secp256k1,openssl_sha256,False)
 	r = 0
