@@ -5,13 +5,10 @@ from fastecdsa import curve, ecdsa, keys, point
 from hashlib import sha256
 
 def sign(m):
+	pk = keys.gen_keypair(curve.secp256k1)
+	public_key = pk[1]
 	
-	#generate public key
-	#Your code here
-  	sk, pk = keys.gen_keypair(curve.secp256k1)
-	public_key = pk
-
-  	r, s = fastecdsa.ecdsa.sign(m,sk,curve.secp256k1,openssl_sha256,False)
+	r, s = fastecdsa.ecdsa.sign(m,sk,curve.secp256k1,openssl_sha256,False)
 	r = 0
 	s = 0
 
@@ -19,4 +16,3 @@ def sign(m):
 	assert isinstance( r, int )
 	assert isinstance( s, int )
 	return( public_key, [r,s] )
-
